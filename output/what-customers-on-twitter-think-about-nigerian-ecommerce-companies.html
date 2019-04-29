@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>    What customers on Twitter think about Nigerian ecommerce companies
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://osinimu.github.io/theme/css/cid.css">
+        <link rel="stylesheet" href="https://osinimu.github.io/theme/css/contact-form.css" type="text/css">
+        <link rel="stylesheet" href="https://osinimu.github.io/theme/css/main.css" type="text/css">
+
+
+
+         <!-- JavaScript -->   
+        <script src="https://osinimu.github.io/theme/js/classie.js"></script>
+        <script src="https://osinimu.github.io/theme/js/contact-form.js"></script>
+
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="container">
+
+<header class="blog-header">
+    <h1><a href="https://osinimu.github.io">osinimu</a></h1>
+    <p>  Data scientist, Writer & Outlier  </p>
+    <nav>
+            <a href="https://osinimu.github.io">Home</a></li>
+            <a href="/about/">About</a></li>
+            <a href="/blog/">Blog</a></li>
+            <a href="/contact/">Contact</a></li>
+    </nav>
+</header>
+
+    <div class="post">
+
+        <header>
+            <h1>What customers on Twitter think about Nigerian ecommerce companies</h1>
+            <h6><p>Nigeria's twitter users and their thoughs on the countrys ecommerce companies.</p></h6>
+            <p class="date">Written on <time datetime="2017-04-03T10:20:00+01:00">Apr 03, 2017</time></p>
+        </header>
+
+        <article>
+            <p>In a country bereft with inadequate data and in some instances, an alarming absence of data, while the biggest purveyors of the limited collated data, hoard it. Any form of data collation in Nigeria is seen as gold. The range of information conveyed through social media, is limitless. Often these short messages are used to share opinions and sentiments that people have about what is going on in the world around them.</p>
+<p>Twitter constitutes a rich source of data that can be used for obtaining information about any topic imaginable. This data can be used in different use cases such as finding trends related to a specific keyword, measuring brand sentiment, and gathering feedback about new products and services. This post was inspired by <a href="https://theartandscienceofdata.wordpress.com/2016/10/09/what-twitter-feels-about-network-providers-in-nigeria/#more-442">Rosebud Anwuri's post</a> on Nigerian telcos.</p>
+<p>I decided to extract data from Twitter about Nigerian e-commerce companies and analyze what customers perceive of these brands, which can in turn help us find out how good their services are. This process is called sentiment analysis. Sentiment analysis is a type of text analytics, a process of determining the emotional tone behind a set of words, gaining an understanding of the the attitudes, opinions and emotions expressed within an online mention. Using this approach I analyzed sentiments in tweets by providing a positive or negative score based on words and Emojis (emoticons). Words like 'angry', 'vex', 'annoyed' appearing in a tweet tend to produce a negative sentiment score while words like 'love', 'like', 'amazed' would do the opposite.Unlike documents, working with informal text genres (like tweets) presents challenges for Natural language processing beyond those typically encountered when working with more traditional text genres. Tweets are short: a sentence or a headline rather than a document. The language used in tweets is very informal, with creative spelling and punctuation, misspellings, slang, new words, URLs, and genre-specific terminology and abbreviations, such as, RT for "retweet" and #hashtags.</p>
+<p>_ Note: it is important point out that Twitter is a very small sample of any e-commerce company's customer base. This means that what may be true for this sample might not necessarily apply to the general population._</p>
+<p>I collected tweets about four nigerian e-commerce companies (konga, jumia, payporte and yudala) from the 28th June to the 6th of July using the <strong>Twittr</strong> package in R. The collected twitter data came with attributes such as: The tweet, the day and time it was posted, the username who posted and the amount of retweets/favorite the tweet posted. Next thing i did was to clean the tweets removing punctuations, trailing and leading spaces, URLs and other things that don't help the analysis, using the Stringr package. Unsurprisingly the bulk of the time spent was on data cleaning. While the cleaning process was on,i came across a discovery about People talking about konga but were referring to the nigerian musician while others talked about a game named donkey konga. After the tweets were cleaned up, I extracted the emoticons from the tweets and put their descriptions in the tweet data file, having noted that emoticons affords us lots of information. Using the <a href="https://finnaarupnielsen.wordpress.com/2011/03/16/afinn-a-new-word-list-for-sentiment-analysis/">AFINN</a> lexicon which gives a sentiment score between -5 to 5 for several words i scored the sentiment of each tweet. I created wordclouds using the <strong>wordcloud</strong> package after converting the tweets to a clean corpus using the <strong>tm</strong> and <strong>SnowballC</strong> package. The code can be found <a href="https://github.com/osisieke/Twitter-sentiment-analysis">here</a>. The visualizations of the final data was done using <strong>Tableau</strong>.</p>
+<p>Lets see some interesting things about each individual ecommerce company that we found. If you want to have a closer look at the visualizations I'll be using, that can be found <a href="https://public.tableau.com/profile/christopher.ajulo#!/vizhome/Book1_21337/Dashboard1">here</a>.</p>
+<p><strong>Jumia</strong></p>
+<p>One of the frontrunners of in the Nigerian e-commerce scene, jumia operates a model based on both business-to-consumer e-commerce and an online marketplace, which allows retailers to sell their products to customers online via Jumia's platform. With over 14 hubs and its own delivery fleet, jumia has a target population reach exceeding 75%. How much are they utilizing their resources to their advantage and their customer's? Let's have a look.</p>
+<p>With an average sentiment score of 0.8, jumia isn't doing bad at all.</p>
+<p>The first chart is a trend chart with the yellow line showing the number of tweets and the blue line the average sentiment score. The chart shows that the higher the tweets about jumia the higher the sentiment score. This means that most of the people tweet about jumia when they feel good about them. The second chart shows the emojis related to jumia and their frequency. 71% of the emojis used are positive emojis which reinforces that customers on twitter like jumia. The third chart shows when customers tweet the most about jumia. The peakest hour for customers tweets is by 7am. Customers tweet the most in the mornings and it dwindles as the day goes by.</p>
+<p>The size of the words in the wordcloud shows how frequently they were used. The words are mostly positive words with words like joy, smile, discount, just, face and hope being displayed.</p>
+<p><strong>Konga</strong></p>
+<p>Recently konga revealed they have 184,000 active customers (approximately 1.1% of the Nigerian population) kind of disappointing right?I know. Seeing as they are arguably nigeria's biggest internet platform. Are they living up to the hype?</p>
+<p>The average sentiment score for konga is 0.76, just below jumia's. I was'nt surprised that that they have the sencond lowest score as they get a lot of stick online. The number of tweets about konga is more consistent than its other competitors. Of all the companies konga had the most negative emojis related to them from a crying face to danger. It's hard to say which time of the day most customers tweet about konga,only that the peakest time for tweets are mostly odd hours of the day. Generally konga gets the most interactions on twitter. Their customers are talking, they just have to listen.</p>
+<p>Looking at their wordcloud.</p>
+<p>The most used keywords are a mixture of positive and negative words. The words that are incomplete are due to the process called <a href="https://en.wikipedia.org/wiki/Stemming">stemming</a>, that reduces certain words to their base or root form.</p>
+<p><strong>Payporte</strong></p>
+<p>The official sponsor of the recently concluded Big Brother Nigeria reality show, payporte wasn't quite known till they were the lead sponsor for the show. The awareness garnered by payporte due to its marketing strategy whilst sponsoring big brother was massive and it's still paying massive dividends.</p>
+<p>Payporte had the highest sentiment score with 1.1. Obviously the residue from the impact made by the reality show is still trickling down into their corner, while making strides to become the third biggest player in the nigerian e-commerce scene. The number of interactions (tweets) for payporte was very consistent with how their customers felt about them on certain day. 86% of the emojis used by customers where positive. Customers tweeted about payporte mostly at noon.</p>
+<p>Here words like love, now, will, dancer, get and like can be seen. Not a lot of keywords stand out, eh?</p>
+<p><strong>Yudala</strong></p>
+<p>Launched in late 2015 as Nigeria's first e-commerce player that operates both an online platform and physical retail stores, giving it an edge over established online-only players such as Jumia and Konga. Even Though the omnichannel model seems to be untested by african retailers and is yet to yield dividends for yudala, there are a lot of safe bets on it. Giving voice to the notion that traditional model in Nigeria still has relevance. Lets see how yudala fares on twitter.</p>
+<p>Yudala has an average sentiment score of 0.5. This is to be expected as they have the lesser of twitter interactions amongst its counterparts. The highest number of tweets they had on any particular day was 5 on the 31st of May. The emojis used in tweets were only two, both having a sentiment score of 0.Customers seem to tweet mostly at 1pm and their sentiment scores also peaks at that time. Customers of yudala seem to be indifferent to them online, could their strong offline presence be the reason?</p>
+<p>Let's look at the most frequent words used in tweets about yudala.</p>
+<p>None of the words stand out as negative. Most of the words are generally positive ones.</p>
+<p><strong>Conclusion</strong></p>
+<ul>
+<li>Customers of jumia are okay with their service, while</li>
+<li>konga received most of the complaints of the four, the good words about them sort of overwhelmed those complaints, giving them a balance, still giving them a lot to think about</li>
+<li>A few customers related to jumia and konga's service to that of amazon.</li>
+<li>payporte really milked out all they could from the Big brother show, hopefully they keep making such marketing strides.</li>
+<li>Yudala being relatively new to the space have customers still undecided about them.</li>
+</ul>
+<p>It took <a href="http://www.wired.com/2015/10/get-used-to-amazon-being-a-profitable-company/">almost 20 years</a> before Amazon delivered one dollar of profit from ecommerce but they now have a massive balance sheet and a lot of expertise learned from its mistakes. Since neither of the nigerian ecommerce companies are profitable yet, it would be easy to say the direction for at least one of the companies would be similar to amazon. Until you know that at most there are only 600k active customers shopping online in Nigeria.</p>
+<p>The cost of changing customer behaviours is usually high, nonetheless that is the key if any of these companies will win in this space. The ability to quickly understand consumer attitudes and react accordingly is something that organizations should look to take advantage of.</p>
+<p><strong>Disclaimers:</strong></p>
+<ul>
+<li>
+<p>Twitter is a relatively small sample of the customer base of any ecommerce company and the people that are mostly use twitter are millennials. Even Though this might be the target market, what may be true for this sample may not necessarily apply to the population/whole customer base.</p>
+</li>
+<li>
+<p>The time period for collecting these tweets is quite short ( 10 days). Maybe i'd keep collecting more tweets.</p>
+</li>
+<li>
+<p>There's little possibility of a skew in the analysis due to a lot of promotional tweets (which i tried my best to filter out).</p>
+</li>
+<li>Since Jumia isnt isnt only in nigeria,some tweets were from countries such as kenya and egypt.</li>
+</ul>
+<p>I'd like to say the analysis can be improved by using a deep learning algorithm, further analyze their delivery service and the quality of their products and also add other ecommerce platforms to the mix.</p>
+<p>Thanks for reading.</p>
+<ul>
+<li><a href="./the-fine-art-of-relationships.html">The Fine art of relationships</a></li>
+<li>
+<p><a href="./the-profitable-neighbourhoods-in-lagos-for-investing-in-property.html">The profitable Neighbourhoods in lagos for investing in property.</a></p>
+</li>
+<li>
+<p><a href="./the-profitable-neighbourhoods-in-lagos-for-investing-in-property.html">The profitable Neighbourhoods in lagos for investing in property.</a></p>
+</li>
+</ul>
+<p><a href="http://christopherajulo.com"><img alt="Avatar" src="theme/images/fosi.jpg"></a></p>
+<p><a href="http://christopherajulo.com">Ajulo Christopher</a></p>
+<p>Did you like this article? Share it with your friends!</p>
+        </article>
+
+        <footer>
+            <p>This entry is posted in <a href="https://osinimu.github.io/category/blog.html">blog</a>.</p>
+        </footer>
+
+
+    </div>
+
+
+<footer class="blog-footer">
+
+    <ul class="nav">
+                <li><a href="https://osinimu.github.io/about">About</a></li>
+                <li><a href="https://osinimu.github.io/blog">Blog</a></li>
+                <li><a href="https://osinimu.github.io/contact">Contact</a></li>
+    </ul>
+
+    <p class="disclaimer" style="margin-top: 70px;">
+     <b>Connect with me</b>
+       <ul class="social" style="margin: 0; margin-top: 20px; padding: 0; display: flex;flex-direction: row;list-style: none; align-items: center !important; justify-content: center;">
+            <li style="padding: 0 15px;font-size: 20pt;"><a class="sc-twitter" href="http://twitter.com/_fosi" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li style="padding: 0 15px;font-size: 20pt;"><a class="sc-github" href="https://github.com/osinimu" target="_blank"><i class="fab fa-github"></i></a></li>
+          </ul>
+    </p>
+</footer>
+            </div>
+    </body>
+</html>

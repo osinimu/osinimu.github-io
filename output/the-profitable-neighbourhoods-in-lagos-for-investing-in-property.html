@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>    The profitable Neighbourhoods in lagos for investing in property.
+</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Merriweather:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://osinimu.github.io/theme/css/cid.css">
+        <link rel="stylesheet" href="https://osinimu.github.io/theme/css/contact-form.css" type="text/css">
+        <link rel="stylesheet" href="https://osinimu.github.io/theme/css/main.css" type="text/css">
+
+
+
+         <!-- JavaScript -->   
+        <script src="https://osinimu.github.io/theme/js/classie.js"></script>
+        <script src="https://osinimu.github.io/theme/js/contact-form.js"></script>
+
+
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+            <div class="container">
+
+<header class="blog-header">
+    <h1><a href="https://osinimu.github.io">osinimu</a></h1>
+    <p>  Data scientist, Writer & Outlier  </p>
+    <nav>
+            <a href="https://osinimu.github.io">Home</a></li>
+            <a href="/about/">About</a></li>
+            <a href="/blog/">Blog</a></li>
+            <a href="/contact/">Contact</a></li>
+    </nav>
+</header>
+
+    <div class="post">
+
+        <header>
+            <h1>The profitable Neighbourhoods in lagos for investing in property.</h1>
+            <h6><p>Best Neighbourhoods in Lagos for investing in property.</p></h6>
+            <p class="date">Written on <time datetime="2017-07-21T00:00:00+01:00">Jul 21, 2017</time></p>
+        </header>
+
+        <article>
+            <h3>Are you thinking about buying a property in Lagos State, Nigeria and then renting it out? Then you should stick around to find out the best neighbourhoods to consider.</h3>
+<p>Actually, how do we go about deciding which Lagos neighbourhood is the least or most profitable? Home to over 14 million people, Lagos is on its way to becoming the <a href="http://www.citymayors.com/statistics/urban_2020_1.html">seventh largest urban area in the world by 2020</a>. This is right after recently obtaining the mega city status. In a society where owning property is regarded as a massive achievement, until you own a property you’re not viewed as one who has accomplished much. Real estate is quite the big deal around these parts.</p>
+<p>Property prices in the nation’s former capital are constantly on the rise along with property owners incessantly increasing rent prices. With the massive expansion ongoing in Lagos, property in the suburbs could soon be at home in commercial neighbourhoods instead.</p>
+<p>There’s an outcry over a housing problem in Lagos but the bane of this problem isn’t that there are no houses. Actually there are empty houses all over the city; with some staying vacant over a year without being rented out. This is quite the headache for someone looking to invest in Lagos real estate.</p>
+<p>Some housing projects remain unoccupied because they are pricey in some neighbourhoods notably Lekki, VI, Ikoyi and Yaba. Nonetheless, developers/investors continue to put up more housing projects. To help navigate through the property market in Lagos, let’s identify which neighbourhoods offer more property investment value.</p>
+<p>The ideal neighbourhood for investing in properties would have:</p>
+<ol>
+<li>High rental price</li>
+<li>Low sale price</li>
+</ol>
+<h4>Web Scraping tolet.com.ng</h4>
+<p>I decided to collect house pricing data in Lagos for both rental and for sale properties after looking at three major websites; <a href="https://www.property24.com/">Property24</a>, <a href="https://www.privateproperty.com.ng/">Privateproperty</a>and <a href="https://www.tolet.com.ng/">Tolet</a>. Compared to the other websites, Tolet search results reveal more information, with the format of each listing being consistent which is splendid for web scraping. (This analysis is based on active listings on tolet.com.ng as at 23/08/2017).</p>
+<p>I web scraped tolet.com.ng using the python scrapy library, then created two spiders, one each for rent and sale properties. I then made a list of 40 Lagos neighbourhoods and categorised each listing address into one of these neighbourhoods.</p>
+<p>Certain neighbourhoods were categorised into one e.g Magodo Phases 1 and 2, Shangisha was categorised into Ikosi and also Lekki Phases 1 and 2 into Lekki.</p>
+<p><img alt="List of neighborrhoods in Lagos" src="/images/neigh.PNG"></p>
+<h4>Cleaning and Manipulating the data</h4>
+<p>For the listings in both the sale and rent datasets, the price columns contained unwanted text like; “_/ year”, “ / sqm” , and “ / day”. _Such text was discarded.</p>
+<p>A new column for categorising each listing’s address into a singular neighborhood was created. This was called “Neighborhood”. The neighborhood of each listing was obtained by matching the list of neighbourhoods created earlier against corresponding listing addresses, and outputting the first match as the values for the neighbourhood column.</p>
+<h4>Finding the Least/Most investable neighbourhoods in Lagos</h4>
+<p>After cleaning up the data it was time for some analysis. Needing a way to evaluate each neighbourhood, I had to compare the rental and sale prices. So for each neighbourhood I calculated the average price for properties, up for rent and for sale.</p>
+<p><img alt="avg price for rent and sale" src="/images/avg_prices.png"></p>
+<p>calculate average price for both rental and sale properties</p>
+<p>Let’s have a look at the dataset before we start weighing the rental and sale prices. I observed from the data set that some neighbourhoods have very few listings or almost none at all. Epe and Ijora both had just 1 listing each, while Ifako-Ijaiye had 3.</p>
+<p><img alt="dataset lookup" src="/images/sas.png"></p>
+<p>Average prices for sale and rent properties.</p>
+<p>The low number of listings can introduce imbalance and also lead to incorrect results. Hence I excluded neighbourhoods with less than or equal to five listings to guarantee the quality of the data.</p>
+<p><img alt="Visualizing the number of listings" src="/images/download.png"></p>
+<p>Visualizing the number of listings</p>
+<p>Some Instances of neighbourhoods with more than 5 listings are; Ajah with an average sale and rent price of 108,854,718.358 Naira and 1,041,328.82 Naira respectively, Apapa with an average sale and rent price of 26303458333.333 Naira and 16702858.065 Naira respectively.</p>
+<p><img alt="Neighbourhoods with more than 5 listings" src="/images/husey.png"></p>
+<p>Neighbourhoods with more than 5 listings.</p>
+<p>We can look for a linear relationship between the average sale price and the average rent price; if it costs more to buy, it should cost more to rent.</p>
+<p>I would also be considering the outliers in this linear regression. Outliers are data points that do not follow the general trend of the rest of the data. There are two types of outliers in our plot below:</p>
+<ol>
+<li>Outliers that are located above the regression line with abnormally high sale price (Orile, Apapa)</li>
+<li>Outliers that are located below the regression line with abnormally low sale price (Ikoyi)</li>
+</ol>
+<p>Type 2 outliers are more likely to be profitable and Type 1 outliers are less likely to be profitable.</p>
+<p><img alt="Linear regression plot of rent prices ~ sale prices" src="/images/reg-code.png"></p>
+<p>Linear regression plot of rent prices ~ sale prices</p>
+<p><img alt="Linear regression plot of rent prices ~ sale prices" src="/images/linear-regression.png"></p>
+<p>Visualization of the linear relationship between average rent and sale price.</p>
+<p>Examining the plot above, we can see points above and below the regression line. Outliers are the extreme cases in these circumstances. The points above the regression line have a higher average sale value than the fitted values, signifying that they are less likely to be profitable. On the other hand, the point below the regression line has a higher average rental price than the fitted values hinting at the tendency of being profitable.</p>
+<p>Compared to other apartments with over ₦10,000,000 average rental price, Ikoyi has the lowest average sale price of ₦867,429,147,alluding to its profitability given rental price is over ₦10,000,000. However it is not clarified that Ikoyi is the most profitable neighbourhood when compared to the other neighbourhoods below the regression line.</p>
+<p>For instance Ejigbo with an average sale price of ₦32,647,058.824 and an average rent price of ₦1,325,000 is far more profitable than Ikoyi with an average sale price of ₦867,429,147 and an average rent price of ₦11,131,547 Naira. Even though Ejigbo is not an outlier.</p>
+<p>To precisely ascertain the profitabilities, I computed the ratio of average rent price over average sale price and plotted the distribution of the ratios.</p>
+<p><img alt="Distribution of the ratio of average rent price to average sale price
+" src="/images/ratio-dist.png"></p>
+<p>Distribution of the ratio of average rent price to average sale price</p>
+<p>From this analysis, the top 5 least profitable neighbourhoods are listed, with the results matching the linear regression analysis.</p>
+<p><img alt="Top 5 leat Profitable Neighbourhoods in Lagos
+" src="/images/least-profitable.png"></p>
+<p>Top 5 least Profitable Neighbourhoods in Lagos</p>
+<p>The top 5 most profitable neighbourhoods are shown beneath, with Ikorodu and Ejigbo leading the way. We can see here that Ikoyi isn’t even in the top 5.</p>
+<p><img alt="Top 5  Profitable Neighbourhoods in Lagos
+" src="/images/top-profitable.png"></p>
+<p>Top 5 Profitable Neighbourhoods in Lagos</p>
+<p>The properties in these neighbourhoods have a low sale price and a high rental price. So if you’re contemplating investing in some real estate, buying properties from these neighbourhoods and putting them up for rent would be worth your while.</p>
+<h4>Challenges</h4>
+<p>While it would be nice to claim this entire exercise was a breeze, it would be dishonest to leave out the challenges I faced. As with any meaningful endeavour in life, there were a few mitigating factors to deal with. The bigger issues included:</p>
+<ul>
+<li>Navigating round the poorly planned city addresses. Street names have ambiguous formats like; “Awolowo Way,” “Obafemi Awolowo Way” or “Chief Obafemi Awolowo Way,” and it’s confusing to know which exactly is which. This issue led me to group the the listings into the most common/general neighbourhoods.</li>
+<li>I intended to compare the rent and sale properties by getting their price averages and dividing that by their sizes(per square meters). Tragically, a dearth of information on the sizes of listed houses, on the websites referenced earlier forced my hand . I had to settle for just the average prices as the benchmark for comparing the rent and sale properties.</li>
+</ul>
+<p>This analysis doesn’t account for taxes, mortgage, insurance payments, and other fees. It can be improved upon by going ahead to predict house prices using machine learning, if a more detailed dataset is made available. The dataset for future exploration would include characteristics such as; size per square meter of a property, unemployment rate, school rating, distance to major employment centres, accessibility to highways, and etc.</p>
+<p>However, I found such data difficult to access.The availability of such statistics in public domain would provide much more insight into how these factors all affect property prices..</p>
+<p>This information could be very useful for future investments and research.</p>
+<p>The full code for this analysis can be found here: <a href="https://github.com/osisieke/tolet-housing-price-analysis/">https://github.com/osisieke/tolet-housing-price-analysis/</a></p>
+        </article>
+
+        <footer>
+            <p>This entry is posted in <a href="https://osinimu.github.io/category/blog.html">blog</a>.</p>
+        </footer>
+
+
+    </div>
+
+
+<footer class="blog-footer">
+
+    <ul class="nav">
+                <li><a href="https://osinimu.github.io/about">About</a></li>
+                <li><a href="https://osinimu.github.io/blog">Blog</a></li>
+                <li><a href="https://osinimu.github.io/contact">Contact</a></li>
+    </ul>
+
+    <p class="disclaimer" style="margin-top: 70px;">
+     <b>Connect with me</b>
+       <ul class="social" style="margin: 0; margin-top: 20px; padding: 0; display: flex;flex-direction: row;list-style: none; align-items: center !important; justify-content: center;">
+            <li style="padding: 0 15px;font-size: 20pt;"><a class="sc-twitter" href="http://twitter.com/_fosi" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li style="padding: 0 15px;font-size: 20pt;"><a class="sc-github" href="https://github.com/osinimu" target="_blank"><i class="fab fa-github"></i></a></li>
+          </ul>
+    </p>
+</footer>
+            </div>
+    </body>
+</html>
