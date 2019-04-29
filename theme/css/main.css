@@ -1,9 +1,12 @@
     * {
-    background-color: #f1e4e4;
-    color: #000000;
+        background-color: #f1e4e4;
+        color: #000000;
+    }
+    
     div.excerpt>p {
         color: #305f72;
     }
+    
     article.post-overview>time {
         color: #ff5959;
     }
