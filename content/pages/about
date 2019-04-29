@@ -1,7 +1,0 @@
-Title: About me
-Slug: about
-Date: 2019-02-22
-
-<div class="intro">
-          <b><span id="intro-description">{{ AUTHOR_INTRO }}</span></b>
-</div>
